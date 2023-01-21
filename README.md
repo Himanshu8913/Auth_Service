@@ -18,3 +18,39 @@
   }
 }
 ```
+
+### To add user model to the database
+```
+> npx sequelize model:generate --name User --attributes email:string,password
+:string
+```
+
+### To migrate user model to the database
+```
+> npx sequelize db:migrate
+```
+
+### To generate role model to the database
+```
+> npx sequelize model:generate --name Role --attributes name:string
+```
+
+### To migrate role model to the database
+```
+> npx sequelize db:migrate
+```
+
+To create User_Roles model we have to sync the database.
+```
+-- db.sequelize.sync({alter: true});
+```
+
+### To generate seed for user_roles 
+```
+> npx sequelize seed:generate --name add-roles
+```
+
+### To seed the file
+```
+> npx sequelize db:seed --seed 20230121055701-add-roles.js
+```
