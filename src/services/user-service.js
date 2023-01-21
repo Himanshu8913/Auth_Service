@@ -90,6 +90,15 @@ class UserService {
             throw {error};
         }
     }
+
+    isAdmin(userId) {
+        try {
+            return this.userRepository.isAdmin(userId);
+        } catch (error) {
+            console.log("Something went wrong in admin check");
+            throw {error};
+        }
+    }
 }
 
 module.exports = UserService;
